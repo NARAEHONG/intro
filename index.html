@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .workspace {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    font: 700 12px system-ui;
+    }
+    </style>
+</head>
+<body>
+    <!-- Scroll with Wheel or Trackpad -->
+    <div class="workspace">
+    <h1>포트폴리오 인트로 소개 페이지</h1>
+    </div>
+
+    <script>
+    const zoomElement = document.querySelector(".workspace");
+    let zoom = 1;
+    const ZOOM_SPEED = 0.1;
+
+    document.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) {
+    zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
+    } else {
+    zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+    }
+    });
+    </script>
+</body>
+</html>
